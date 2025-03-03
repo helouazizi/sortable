@@ -1,3 +1,5 @@
+
+
 const loadData = (heroes) => {
     const tbody = document.querySelector('tbody');
 
@@ -20,7 +22,6 @@ const loadData = (heroes) => {
     });
     pagination(heroes)
 
-
 };
 
 fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
@@ -38,9 +39,16 @@ function pagination(heroes){
         // console.log(Math.ceil(heroes.length/num))
         let pages = Math.ceil(heroes.length/num)
         let pagination = document.querySelector('.pagination')
-        for (let i = 1; i <= pages ;i++){
+        for (let i = 2; i <= pages ;i++){
             let page = `<li><a href=${i}>${i}<a></li>`
             pagination.innerHTML += page
         }
+        Getpage(heroes,num)
+
     })
+}
+
+
+function Getpage(heroes,num){
+    
 }
