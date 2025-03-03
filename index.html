@@ -4,34 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>sortable</title>
+    <title>Superhero Table</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: #333;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .banner select, .banner input {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .banner input {
+            width: 200px;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
         }
+
         th, td {
-            border: 1px solid black;
-            padding: 8px;
+            border: 1px solid #ddd;
+            padding: 10px;
             text-align: left;
         }
+
         th {
-            background-color: #7c6f6f;
+            background-color: #444;
+            color: white;
         }
+
         .icon img {
             width: 50px;
             height: 50px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
         }
     </style>
 </head>
 <body>
+
     <div class="banner">
-        <div class="select">select</div>
-        <div class="search">search</div>
+        <select id="alignmentFilter">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="-1">All</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Search by name...">
     </div>
+
     <table>
         <thead>
-            <tr >
+            <tr>
                 <th>Icon</th>
                 <th>Name</th>
                 <th>Full Name</th>
@@ -44,11 +89,12 @@
                 <th>Alignment</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-            </tr>
+        <tbody id="heroTableBody">
+            <!-- Data will be inserted here -->
         </tbody>
     </table>
+
     <script src="./script.js"></script>
+
 </body>
 </html>
