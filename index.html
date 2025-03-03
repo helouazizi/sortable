@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>sortable</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #7c6f6f;
+        }
+        .icon img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
     <div class="banner">
@@ -13,7 +31,7 @@
     </div>
     <table>
         <thead>
-            <tr class="headers">
+            <tr >
                 <th>Icon</th>
                 <th>Name</th>
                 <th>Full Name</th>
@@ -31,5 +49,6 @@
             </tr>
         </tbody> -->
     </table>
+    <script src="./script.js"></script>
 </body>
 </html>
