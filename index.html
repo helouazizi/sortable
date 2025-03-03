@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
     <title>Superhero Table</title>
     <style>
         body {
@@ -23,7 +23,8 @@
             border-radius: 5px;
         }
 
-        .banner select, .banner input {
+        .banner select,
+        .banner input {
             padding: 8px;
             font-size: 16px;
             border: none;
@@ -37,12 +38,13 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
+            background: rgb(165, 163, 163);
             border-radius: 5px;
             overflow: hidden;
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: left;
@@ -59,14 +61,85 @@
             border-radius: 50%;
             border: 2px solid #ddd;
         }
+
+        /* ///////////////////////////////////////////////////////////////////////////////// */
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Pagination flex styling */
+        ul.pagination {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #b1a3a3;
+            border-radius: 30px;
+        }
+
+        ul.pagination li {
+            margin: 0;
+        }
+
+        ul.pagination li a {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        ul.pagination li a:hover,
+        ul.pagination li a.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        ul.pagination li a.prev,
+        ul.pagination li a.next {
+            font-weight: bold;
+        }
+
+        ul.pagination li a.disabled {
+            color: #ccc;
+            pointer-events: none;
+        }
+
+        ul.pagination li a.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Optional: Add spacing between page numbers */
+        ul.pagination li:not(:first-child):not(:last-child) a {
+            margin: 0 5px;
+        }
+
+        /* Responsiveness: for smaller screens, make pagination more compact */
+        @media (max-width: 600px) {
+            ul.pagination {
+                flex-wrap: wrap;
+                /* Allow wrapping of pagination items */
+                justify-content: space-between;
+                /* Space out items more evenly */
+            }
+
+            ul.pagination li {
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <div class="banner">
         <select id="alignmentFilter">
-            <option value="10">10</option>
             <option value="20">20</option>
+            <option value="10">10</option>
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="-1">All</option>
@@ -93,8 +166,13 @@
             <!-- Data will be inserted here -->
         </tbody>
     </table>
+    <nav>
+        <ul class="pagination">
+        </ul>
+    </nav>
 
     <script src="./script.js"></script>
 
 </body>
+
 </html>

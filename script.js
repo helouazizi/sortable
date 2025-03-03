@@ -18,9 +18,29 @@ const loadData = (heroes) => {
         `;
         tbody.innerHTML += row;
     });
+    pagination(heroes)
+
+
 };
 
 fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
     .then(response => response.json()) 
     .then(loadData)
     .catch(error => console.error("Error fetching data:", error));
+
+function pagination(heroes){
+    //l ets get the selec html id
+    let select =  document.getElementById('alignmentFilter')
+    select.addEventListener("change",(event)=>{
+        let num = parseInt(event.target.value)
+        // console.log(parseInt(event.target.value))
+        // console.log(heroes.length)
+        // console.log(Math.ceil(heroes.length/num))
+        let pages = Math.ceil(heroes.length/num)
+        let pagination = document.querySelector('.pagination')
+        for (let i = 1; i <= pages ;i++){
+            let page = `<li><a href=${i}>${i}<a></li>`
+            pagination.innerHTML += page
+        }
+    })
+}
