@@ -6,7 +6,7 @@ const loadData = (heroes) => {
             <tr>
                 <td><img src="${hero.images.xs}" alt="${hero.name}" width="50"></td>
                 <td>${hero.name}</td>
-                <td>${hero.biography.fullName || "N/A"}</td>
+                <td>${hero.biography.fullName || "Unknown"}</td>
                 <td>${JSON.stringify(hero.powerstats)}</td>
                 <td>${hero.appearance.race || "Unknown"}</td>
                 <td>${hero.appearance.gender}</td>
