@@ -111,4 +111,4 @@ function Getpage(heroes,num,pagenum) {
 
 
 }
-    fetchHeroes();
+fetchHeroes();
