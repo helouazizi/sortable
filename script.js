@@ -3,6 +3,7 @@ const loadData = (heroes) => {
     const tbody = document.querySelector('tbody');      
 
     heroes.forEach(hero => {
+        console.log(hero)
         let row = `
             <tr>
                 <td><img src="${hero.images.xs}" alt="${hero.name}" width="50"></td>
@@ -116,7 +117,11 @@ function sort(heroes){
       // Convert headers to an array before using forEach
       Array.from(headers).forEach(th => {
        th.addEventListener("click",(event)=>{
-           console.log(event.target.value) 
+            let tag = event.target.value
+            // lets check if the tag hase the numbers
+                sortHeroes(heroes,tag,"string")
        })
     });
 }
+
+
