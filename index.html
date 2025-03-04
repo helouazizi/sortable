@@ -126,6 +126,10 @@
         ul.pagination li:not(:first-child):not(:last-child) button {
             margin: 0 5px;
         }
+        .hide {
+            display: none;
+        }
+
 
         /* Responsiveness: for smaller screens, make pagination more compact */
         @media (max-width: 600px) {
@@ -154,7 +158,7 @@
             <option value="-1">All</option>
            
         </select>
-        <input type="text" id="searchInput" placeholder="Search by name...">
+        <input type="search" id="searchInput" placeholder="Search by name..." data-search>
     </div>
 
     <table>

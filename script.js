@@ -1,7 +1,6 @@
 
-
 const loadData = (heroes) => {
-    const tbody = document.querySelector('tbody');
+    const tbody = document.querySelector('tbody');      
 
     heroes.forEach(hero => {
         let row = `
@@ -20,6 +19,22 @@ const loadData = (heroes) => {
         `;
         tbody.innerHTML += row;
     });
+    const search = document.querySelector("[data-search]");
+
+    search.addEventListener("input", e => {
+        const value = e.target.value.trim().toLowerCase();
+        const rows = document.querySelectorAll("#heroTableBody tr"); 
+    
+        rows.forEach(row => {
+            const nameCell = row.querySelector("td:nth-child(2)"); 
+            const name = nameCell.textContent.toLowerCase();
+    
+            const isVisible = name.includes(value);
+            row.classList.toggle("hide", !isVisible);
+        });
+    });
+    
+    
     pagination(heroes)
     sort(heroes)
 
@@ -30,7 +45,9 @@ fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
     .then(loadData)
     .catch(error => console.error("Error fetching data:", error));
 
-function pagination(heroes) {
+
+
+function pagination(heroes){
     //l ets get the selec html id
     let select = document.getElementById('alignmentFilter')
     select.addEventListener("change", (event) => {
