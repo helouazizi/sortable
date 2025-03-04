@@ -34,10 +34,10 @@ function pagination(heroes) {
     let select = document.getElementById('alignmentFilter')
     select.addEventListener("change", (event) => {
         let num = parseInt(event.target.value)
-         console.log(parseInt(event.target.value))
+         //console.log(parseInt(event.target.value))
         // console.log(heroes.length)
         // console.log(Math.ceil(heroes.length/num))
-        //let pages = Math.ceil(heroes.length / num)
+        let pages = Math.ceil(heroes.length / num)
         let pagination = document.querySelector('.pagination')
         pagination.innerHTML = ""
         for (let i = 1; i <= pages; i++) {
