@@ -38,13 +38,14 @@ const loadData = (heroes) => {
     pagination(heroes)
 
 };
-
-fetch("https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json")
-    .then(response => response.json())
-    .then(loadData)
-    .catch(error => console.error("Error fetching data:", error));
-
-
+    const fetchHeroes = async () => {
+        const response = await fetch(
+          "https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json"
+        );
+        const data = await response.json();
+        heroes = data;
+        loadData(heroes);
+      };
 
 function pagination(heroes){
     //l ets get the selec html id
@@ -108,3 +109,4 @@ function Getpage(heroes,num,pagenum) {
 
 
 }
+    fetchHeroes();
