@@ -62,7 +62,7 @@
             border: 2px solid #ddd;
         }
 
-        /* ///////////////////////////////////////////////////////////////////////////////// */
+        /* ///////////////////////////////////////////////////////////////////////////////////// */
 
         nav {
             text-align: center;
@@ -74,47 +74,47 @@
             display: flex;
             flex-wrap: wrap;
             list-style: none;
-            padding: 0;
+            padding: 5px;
             margin: 0;
-            background-color: #b1a3a3;
-            border-radius: 30px;
+            background-color: #c56969;
+            /* //border-radius: 30px; */
         }
 
         ul.pagination li {
             margin: 0;
         }
 
-        ul.pagination li a {
+        ul.pagination li button {
             display: block;
-            padding: 10px 15px;
+            padding: 5px 10px;
             color: #333;
             text-decoration: none;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        ul.pagination li a:hover,
-        ul.pagination li a.active {
+        ul.pagination li button:hover,
+        ul.pagination li button.active {
             background-color: #007bff;
             color: white;
         }
 
-        ul.pagination li a.prev,
-        ul.pagination li a.next {
+        ul.pagination li button.prev,
+        ul.pagination li button.next {
             font-weight: bold;
         }
 
-        ul.pagination li a.disabled {
+        ul.pagination li button.disabled {
             color: #ccc;
             pointer-events: none;
         }
 
-        ul.pagination li a.active {
+        ul.pagination li button.active {
             background-color: #007bff;
             color: white;
         }
 
         /* Optional: Add spacing between page numbers */
-        ul.pagination li:not(:first-child):not(:last-child) a {
+        ul.pagination li:not(:first-child):not(:last-child) button {
             margin: 0 5px;
         }
         .hide {
@@ -147,6 +147,7 @@
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="-1">All</option>
+           
         </select>
         <input type="search" id="searchInput" placeholder="Search by name..." data-search>
     </div>
