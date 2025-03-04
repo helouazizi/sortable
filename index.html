@@ -52,7 +52,16 @@
 
         th {
             background-color: #444;
-            color: white;
+            cursor: pointer;
+            button{
+                cursor: pointer;
+                border: none;
+                background: none;
+                width: 100%;
+                font-size: small;
+                color: white;
+            
+            }
         }
 
         .icon img {
@@ -151,16 +160,16 @@
     <table>
         <thead>
             <tr>
-                <th>Icon</th>
-                <th>Name</th>
-                <th>Full Name</th>
-                <th>Powerstats</th>
-                <th>Race</th>
-                <th>Gender</th>
-                <th>Height</th>
-                <th>Weight</th>
-                <th>Place of Birth</th>
-                <th>Alignment</th>
+                <th><button value="images.xs">Icon</button></th>
+                <th><button value="name">Name</button></th>
+                <th><button value="fullName">Full Name</button></th>
+                <th><button value="powerstats">Powerstats</button></th>
+                <th><button value="appearance.race">Race</button></th>
+                <th><button value="appearance.gender">Gender</button></th>
+                <th><button value="appearance.height">Height</button></th>
+                <th><button value="appearance.weight">Weight</button></th>
+                <th><button value="biography.placeOfBirth">Place of Birth</button></th>
+                <th><button value="biography.alignment">Alignment</button></th>
             </tr>
         </thead>
         <tbody id="heroTableBody">

@@ -21,6 +21,7 @@ const loadData = (heroes) => {
         tbody.innerHTML += row;
     });
     pagination(heroes)
+    sort(heroes)
 
 };
 
@@ -90,4 +91,15 @@ function Getpage(heroes,num,pagenum) {
     
 
 
+}
+
+
+function sort(heroes){
+    let headers = document.getElementsByTagName('th')
+      // Convert headers to an array before using forEach
+      Array.from(headers).forEach(th => {
+       th.addEventListener("click",(event)=>{
+           console.log(event.target.value) 
+       })
+    });
 }
